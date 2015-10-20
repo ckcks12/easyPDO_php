@@ -28,7 +28,15 @@ function dbStmt($db, $stmt)
 		$stmt->execute();
 
 		$rslt = $stmt->setFetchMode(PDO::FETCH_ASSOC);
-		return $stmt->fetchAll();
+		//if the query has no return value then only $rslt will return it was succeed.
+		try
+		{
+			return $stmt->fetchAll();
+		}
+		catch(Exception $e)
+		{
+			return $rslt;
+		}
 	}
 	catch(Exception $e)
 	{
