@@ -23,8 +23,8 @@ function dbStmt($db, $stmt)
 	try
 	{
 		$stmt = $db->prepare($stmt);
-		for( $i=2; $i<count($args); $i++ )
-			$stmt->bindParam($args[$i]);
+		for( $i=2; $i<count($args); $i+=2 )
+			$stmt->bindParam($args[$i], $args[$i+1]);
 		$stmt->execute();
 
 		$rslt = $stmt->setFetchMode(PDO::FETCH_ASSOC);
