@@ -1,10 +1,10 @@
 <?php
 
-function dbConnect($server_name, $db_name, $usr_name, $usr_pw)
+function dbConnect($pdo_driver, $server_name, $db_name, $usr_name, $usr_pw)
 {
 	try
 	{
-		$db = new PDO("mysql:host=".$server_name.";dbname=".$db_name, $usr_name, $usr_pw);
+		$db = new PDO($pdo_driver.":host=".$server_name.";dbname=".$db_name, $usr_name, $usr_pw);
 		$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		return $db;
 	}
