@@ -21,9 +21,9 @@ $stmt : The sql query that will be exectued.
 
   **parameters and binding example**
   
-  `dbStmt($db, "select * frmo account where id=:id and pw=:pw", ":id", $id, ":pw", $pw);`
+  `dbStmt($db, "select * from account where id=:id and pw=:pw", ":id", $id, ":pw", $pw);`
   
-  It can receive various amount of parameters. Reference at [`func_get_args()`](http://php.net/manual/en/function.func-get-args.php)
+  It can receive various amount of parameters. Reference [`func_get_args()`](http://php.net/manual/en/function.func-get-args.php)
   
 return : succeed when the query has no return : `true` (maybe?)
 
