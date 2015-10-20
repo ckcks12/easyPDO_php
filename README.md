@@ -15,7 +15,7 @@ return : when connection has succeed, it returns PDO obejct but failed it return
 ---
 `dbStmt($db, $stmt)`
 
-$db : PDO object. Sorry, but function doesn't care that it has been connected.
+$db : PDO object. Sorry, but function doesn't care about its connection.
 
 $stmt : The sql query that will be exectued.
 
